@@ -1,74 +1,105 @@
 # 🛒 Data Analytics for Freshco Hypermarket (November 2024)
 
-This project focuses on analyzing sales, order, and customer data for Freshco Hypermarket using Microsoft Excel. The objective was to identify inefficiencies, understand customer behavior, and recommend actions to drive growth.
+This project focuses on analyzing sales, order, delivery, and customer data for Freshco Hypermarket using Microsoft Excel. The objective was to uncover inefficiencies, improve delivery operations, analyze customer behavior, and enable data-driven business decisions.
 
 ---
 
 ## 📌 Project Overview
 
 - **Client/Scenario:** Freshco Hypermarket – a large retail chain
-- **Goal:** Use Excel to analyze and visualize data from orders, deliveries, and customer interactions
-- **Technology:** Microsoft Excel (Functions, PivotTables, Charts, Conditional Formatting)
+- **Goal:** Analyze operational metrics across orders, delivery, and customer activity
+- **Technology:** Microsoft Excel (Formulas, PivotTables, Charts, Conditional Formatting)
 
 ---
 
 ## 🎯 Problem Statement
 
-Freshco Hypermarket wanted better visibility into their operations, particularly to:
+Freshco Hypermarket needed visibility into:
 
-- Track order-to-delivery timelines
-- Understand frequent customer behavior
-- Identify underperforming product categories
-- Find opportunities to optimize stock and revenue
+- Order patterns across time slots and geographies  
+- Completion and cancellation trends  
+- Customer behavior and lifetime value  
+- Delivery time optimization and rating patterns  
+- Areas of high discounts, delivery charges, or inefficiencies  
 
 ---
 
 ## 🗂️ Dataset Attributes
 
-The project used multiple Excel sheets including:
-
-- **Orders** – Order ID, Customer ID, Order Date, Delivery Date, Order Value
-- **Customers** – Customer ID, Name, Age Group, City, Total Orders
-- **Products** – Product ID, Category, Price, Stock Status
+| Field                          | Description                                                                 |
+|--------------------------------|-----------------------------------------------------------------------------|
+| Order Timestamp                | Order placed time                                                          |
+| User ID                        | Unique ID of the customer                                                  |
+| Order Pickup Geo               | Pickup area location                                                       |
+| Order Drop Geo                 | Drop area location                                                         |
+| Order ID                       | Unique identifier for an order                                             |
+| Products                       | List of products in each order                                             |
+| Partner Store Reach Time       | Time when the delivery partner reached the pickup location                 |
+| Partner Start for Delivery Time| Time when delivery partner started the journey                             |
+| Completed/Cancelled Timestamp  | Time when delivery was completed or cancelled                             |
+| Completion Flag                | Status of delivery (Completed or Not)                                      |
+| Order Rating                   | Customer rating for order and delivery                                     |
+| Product Amount                 | Total product value before discount                                        |
+| Delivery Charges               | Transport cost which may vary by location                                  |
+| Discount                       | Reduction offered on product/service                                       |
 
 ---
 
-## 🧾 Key Tasks & Activities
+## ✅ Key Task Categories & Activities
 
-| Task | Description |
-|------|-------------|
-| ✅ Data Cleaning | Removed duplicates, corrected date formats, handled blanks |
-| ✅ Delivery Analysis | Computed delivery delays using formulas (`=DATEDIF`) |
-| ✅ Customer Segmentation | Grouped customers by city, age group, and order volume |
-| ✅ Sales Trend Analysis | Created monthly sales and category-wise revenue summaries |
-| ✅ Visualizations | Used PivotTables and PivotCharts for trend analysis |
-| ✅ Insights | Identified top-performing SKUs and areas with delayed delivery issues |
+### 📦 Order Level Analysis
+- Analyze order distribution by slot and delivery area
+- Identify areas with highest month-over-month order growth (Jan–Sep)
+- Calculate delivery charges as % of product amount (by slot and month)
+- Analyze discount % by product and time slot
+- Evaluate discounts across drop area and slot level
+
+### ✔️ Completion Rate Analysis
+- Analyze completion rate by slot vs. day of week (Sunday to Saturday)
+- Completion rate at drop area level
+- Completion rate by product count (required column creation)
+- Provide insights on completion trends and anomalies
+
+### 👥 Customer Level Analysis
+- Identify completion rate by acquisition source
+- Calculate LTV per customer
+- Aggregate LTV at acquisition source level
+- Evaluate revenue (Product Amount – Discount) per acquisition source and month
+- Identify trends in revenue, items per order, and delivery charges across acquisition levels
+- Detect rating patterns based on order size, time, and charges
+
+### 🚚 Delivery Analysis
+- Calculate overall delivery time by slot and area
+- Compare delivery times: weekdays vs weekends (requires new column)
+- Analyze delivery delays based on delivery start time vs completion
+- Detect delivery time patterns across slots and areas
 
 ---
 
 ## 📊 Tools & Techniques Used
 
-- Excel Functions: `VLOOKUP`, `IF`, `COUNTIFS`, `SUMIFS`, `DATEDIF`, `TEXT`
+- Excel Functions: `VLOOKUP`, `IF`, `COUNTIFS`, `SUMIFS`, `DATEDIF`, `TEXT`, `WEEKDAY`
 - PivotTables & PivotCharts
-- Conditional Formatting for delivery performance
-- Dashboard layout for KPIs and trends
+- Conditional Formatting for trends and flags
+- Dashboard layout for insights and KPIs
 
 ---
 
 ## 🔍 Sample Insights
 
-- 📉 Certain cities experienced frequent delivery delays, impacting satisfaction
-- 🛒 Customers aged 30–45 had the highest repeat purchase rates
-- 📈 November sales peaked due to seasonal promotions
-- 📦 Out-of-stock rates were highest in the Electronics category
+- 📉 Weekend orders had higher completion delays in northern zones
+- 🕒 Late-night orders showed lower ratings but higher average value
+- 🛍️ Customers acquired via referral had better LTV and larger basket size
+- 📈 High discount levels impacted delivery success negatively in certain slots
 
 ---
 
 ## 🧠 Outcome
 
-- Uncovered **delivery bottlenecks** and proposed logistics adjustments
-- Identified **loyal customer segments** for targeted campaigns
-- Provided actionable data that contributed to improved **customer satisfaction** and **increased revenue**
+- Improved understanding of time-based order fulfillment issues
+- Uncovered customer segments driving high LTV
+- Pinpointed zones requiring delivery ops improvement
+- Enabled Freshco to take actionable steps to boost satisfaction and reduce costs
 
 ---
 
@@ -80,10 +111,11 @@ The project used multiple Excel sheets including:
 
 ## 💡 Skills Demonstrated
 
-- Data Cleaning and Validation
-- Business Data Analysis
-- Trend Identification and KPI Reporting
-- Excel Dashboard Design
+- Data Cleaning and Transformation
+- Business Operations Analysis
+- Delivery Performance Metrics
+- Customer Segmentation and LTV
+- Excel-based Dashboarding
 - Pivot Tables
 
 
